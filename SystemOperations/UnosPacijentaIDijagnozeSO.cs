@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace SystemOperations
 {
-    public class UnosDijagnozeSO : AbstractGenericOperation
+    public class UnosPacijentaIDijagnozeSO : AbstractGenericOperation
     {
         protected override object Execute(IDomain entity)
         {
             Diagnosis d = (Diagnosis)entity;
 
-            int rows = broker.Insert(d);
-            if (rows == 0) return false;
+
+            if (broker.Insert(d.Patient) == 0) return false;
+
+
+            if (broker.Insert(d) == 0) return false;
 
             List<IDomain> dm = broker.Select(d);
             Diagnosis diagnosisInDb = (Diagnosis)dm.Last();
@@ -42,15 +45,10 @@ namespace SystemOperations
 
         protected override void Validate(IDomain entity)
         {
-            if(!(entity is Diagnosis))
+            if (!(entity is Diagnosis))
             {
                 throw new ArgumentException();
             }
-        }
-
-        public override object ExecutePublic(IDomain entity)
-        {
-           return Execute(entity);
         }
     }
 }

@@ -14,6 +14,11 @@ namespace SystemOperations
         protected abstract void Validate(IDomain entity);
         protected Broker broker = new Broker();
 
+        public virtual object ExecutePublic(IDomain entity)
+        {
+            return true;
+        }
+
         public object ExecuteSO(IDomain entity)
         {
             object res = null;

@@ -8,6 +8,17 @@ namespace Transfer
 {
     public enum Operation
     {
-        Login
+        Login,
+        SacuvajBolest,
+        UcitajBolesti,
+        BrisanjeLeka,
+        UnosLeka,
+        UnosPacijenta,
+        UnosDijagnoze,
+        PretragaLekova,
+        IzmenaPacijenta,
+        SacuvajPacijentaIDijagnozu,
+        UcitajLekove,
+        PretragaPacijenata
     }
 }

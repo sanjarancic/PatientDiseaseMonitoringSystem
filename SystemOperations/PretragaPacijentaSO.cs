@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SystemOperations
 {
-    class PretragaPacijentaSO : AbstractGenericOperation
+    public class PretragaPacijentaSO : AbstractGenericOperation
     {
         protected override object Execute(IDomain entity)
         {

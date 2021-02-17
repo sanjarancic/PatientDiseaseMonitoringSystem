@@ -53,9 +53,9 @@
       <Project>{2b09e0dd-e753-4203-b7b2-526b3229a90b}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Storage\Storage.csproj">
-      <Project>{8EA444EE-6B4C-40CD-A2DB-81E46A8678A2}</Project>
-      <Name>Storage</Name>
+    <ProjectReference Include="..\SystemOperations\SystemOperations.csproj">
+      <Project>{AEEEA85F-8910-4161-8E00-D42F14626511}</Project>
+      <Name>SystemOperations</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

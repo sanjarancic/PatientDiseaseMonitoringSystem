@@ -7,19 +7,15 @@ using System.Threading.Tasks;
 
 namespace SystemOperations
 {
-    public class UnosPacijentaSO : AbstractGenericOperation
+    public class UcitajBolestiSO : AbstractGenericOperation
     {
         protected override object Execute(IDomain entity)
         {
-            return broker.Insert(entity) > 0;
+            return broker.SelectJoin(entity).OfType<Illness>().ToList();
         }
 
         protected override void Validate(IDomain entity)
         {
-            if (!(entity is Patient))
-            {
-                throw new ArgumentException();
-            }
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
+    [Serializable]
     public class Doctor:IDomain
     {
         public int DoctorId { get; set; }
@@ -23,7 +24,7 @@ namespace Domain
 
         public string SearchWhere { get; set; }
 
-        public string SearchId => $"DoctorId = {this.DoctorId}";
+        public string SearchId => $"Username = {this.Username}";
 
         public string JoinFull => "";
 
@@ -36,11 +37,11 @@ namespace Domain
             {
                 Doctor m = new Doctor
                 {
-                    DoctorId = (int)reader[3],
-                    DoctorName = reader.GetString(5),
-                    DoctorSurname = reader.GetString(6),
-                    Username = reader.GetString(7),
-                    Password = reader.GetString(8)
+                    DoctorId = (int)reader[0],
+                    DoctorName = reader.GetString(1),
+                    DoctorSurname = reader.GetString(2),
+                    Username = reader.GetString(3),
+                    Password = reader.GetString(4)
                 };
                 list.Add(m);
             }
@@ -50,6 +51,11 @@ namespace Domain
         public List<IDomain> GetReaderResultJoin(SqlDataReader reader)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"Dr {DoctorName} {DoctorSurname}";
         }
     }
 }

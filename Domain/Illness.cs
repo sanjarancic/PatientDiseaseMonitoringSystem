@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
+    [Serializable]
     public class Illness:IDomain
     {
         public int IllnessId { get; set; }
@@ -16,7 +17,7 @@ namespace Domain
 
         public string Table => "Illness";
 
-        public string InsertValues => $"{this.IllnessId}, '{this.IllnessName}', '{this.IllnessCategory}', {this.Doctor.DoctorId}";
+        public string InsertValues => $"'{this.IllnessName}', '{this.IllnessCategory}', {this.Doctor.DoctorId}";
 
         public string UpdateValues => $"IllnessId = {this.IllnessId}, IllnessName = '{this.IllnessName}', IllnessCategory = '{this.IllnessCategory}', DoctorId = {this.Doctor.DoctorId}";
 
@@ -55,6 +56,11 @@ namespace Domain
                 list.Add(m);
             }
             return list;
+        }
+
+        public override string ToString()
+        {
+            return IllnessName;
         }
     }
 }

@@ -45,6 +45,8 @@
     <Compile Include="IDomain.cs" />
     <Compile Include="Illness.cs" />
     <Compile Include="Medicine.cs" />
+    <Compile Include="IllnessMedicine.cs" />
+    <Compile Include="MedicineDiagnosis.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

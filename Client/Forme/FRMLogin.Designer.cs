@@ -59,6 +59,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(100, 20);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "sanjalica";
             // 
             // txtPassword
             // 
@@ -66,6 +67,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "sanja";
             // 
             // btnLogin
             // 
@@ -75,8 +77,9 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Uloguj se";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Login
+            // FRMLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,7 +89,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
+            this.Name = "FRMLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

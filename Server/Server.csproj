@@ -82,6 +82,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{456E57D4-6193-42FF-B41D-13B3451626E0}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{2B09E0DD-E753-4203-B7B2-526B3229A90B}</Project>
       <Name>Domain</Name>

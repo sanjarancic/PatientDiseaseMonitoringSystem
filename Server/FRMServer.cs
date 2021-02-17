@@ -18,25 +18,12 @@ namespace Server
         public FRMServer()
         {
             InitializeComponent();
-            btnStop.Enabled = false;
+            StartServer();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            s = new Server();
-            if (s.RunServer())
-            {
-                serverThread = new Thread(s.Listen);
-                serverThread.IsBackground = true;
-                serverThread.Start();
-                lblStanjeServera.Text = "Server je pokrenut!";
-                btnStart.Enabled = false;
-                btnStop.Enabled = true;
-            }
-            else
-            {
-                lblStanjeServera.Text = "Server nije pokrenut!";
-            }
+            StartServer();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -51,6 +38,24 @@ namespace Server
                 lblStanjeServera.Text = "Server je zaustavljen!";
                 btnStart.Enabled = true;
                 btnStop.Enabled = false;
+            }
+        }
+
+        private void StartServer()
+        {
+            s = new Server();
+            if (s.RunServer())
+            {
+                serverThread = new Thread(s.Listen);
+                serverThread.IsBackground = true;
+                serverThread.Start();
+                lblStanjeServera.Text = "Server je pokrenut!";
+                btnStart.Enabled = false;
+                btnStop.Enabled = true;
+            }
+            else
+            {
+                lblStanjeServera.Text = "Server nije pokrenut!";
             }
         }
     }

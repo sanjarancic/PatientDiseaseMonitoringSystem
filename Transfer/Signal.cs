@@ -8,6 +8,7 @@ namespace Transfer
 {
     public enum Signal
     {
-        OK
+        OK,
+        Error
     }
 }

@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBBroker", "DBBroker\DBBroker.csproj", "{EEA4A8CD-E608-4DEC-A717-04701B08C836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage", "Storage\Storage.csproj", "{8EA444EE-6B4C-40CD-A2DB-81E46A8678A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemOperations", "SystemOperations\SystemOperations.csproj", "{AEEEA85F-8910-4161-8E00-D42F14626511}"
 EndProject
 Global
@@ -49,10 +47,6 @@ Global
 		{EEA4A8CD-E608-4DEC-A717-04701B08C836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEA4A8CD-E608-4DEC-A717-04701B08C836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEA4A8CD-E608-4DEC-A717-04701B08C836}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EA444EE-6B4C-40CD-A2DB-81E46A8678A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EA444EE-6B4C-40CD-A2DB-81E46A8678A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EA444EE-6B4C-40CD-A2DB-81E46A8678A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EA444EE-6B4C-40CD-A2DB-81E46A8678A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEEEA85F-8910-4161-8E00-D42F14626511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AEEEA85F-8910-4161-8E00-D42F14626511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEEEA85F-8910-4161-8E00-D42F14626511}.Release|Any CPU.ActiveCfg = Release|Any CPU

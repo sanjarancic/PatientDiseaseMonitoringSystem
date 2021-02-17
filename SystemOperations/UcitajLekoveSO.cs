@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace SystemOperations
 {
-    public class UnosBolestiSO : AbstractGenericOperation
+    public class UcitajLekoveSO : AbstractGenericOperation
     {
         protected override object Execute(IDomain entity)
         {
-            return broker.Insert(entity) > 0;
+            return broker.SelectJoin(entity).OfType<Medicine>().ToList();
         }
 
         protected override void Validate(IDomain entity)
         {
-            if(!(entity is Illness))
+            
+            if(!(entity is Medicine))
             {
                 throw new ArgumentException();
             }

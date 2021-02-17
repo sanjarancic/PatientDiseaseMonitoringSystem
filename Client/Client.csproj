@@ -46,9 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\BrisanjeLekaC.cs" />
+    <Compile Include="Communication.cs" />
     <Compile Include="Controller\IzmenaPacijentaC.cs" />
     <Compile Include="Controller\LoginC.cs" />
+    <Compile Include="Controller\MainController.cs" />
     <Compile Include="Controller\PretragaLekovaC.cs" />
     <Compile Include="Controller\PretragaPacijentaC.cs" />
     <Compile Include="Controller\UnosBolestiC.cs" />
@@ -69,12 +70,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\BrisanjeLeka.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\BrisanjeLeka.Designer.cs">
-      <DependentUpon>BrisanjeLeka.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\IzmenaPacijenta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +127,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\IzmenaPacijenta.resx">
+      <DependentUpon>IzmenaPacijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PretragaLekova.resx">
+      <DependentUpon>PretragaLekova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PretragaPacijenta.resx">
+      <DependentUpon>PretragaPacijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UnosBolesti.resx">
+      <DependentUpon>UnosBolesti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UnosDijagnoze.resx">
+      <DependentUpon>UnosDijagnoze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UnosLeka.resx">
+      <DependentUpon>UnosLeka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UnosPacijenta.resx">
+      <DependentUpon>UnosPacijenta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +161,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{2B09E0DD-E753-4203-B7B2-526B3229A90B}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Transfer\Transfer.csproj">
+      <Project>{E7B14C95-C5E0-4B21-B05A-D2856B33DE9A}</Project>
+      <Name>Transfer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

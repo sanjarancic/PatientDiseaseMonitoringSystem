@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
+    [Serializable]
     public class Patient:IDomain
     {
         public string PatientJMBG { get; set; }
@@ -14,18 +16,25 @@ namespace Domain
         public string PatientSurname { get; set; }
         public Doctor Doctor { get; set; }
 
+        [Browsable(false)]
         public string Table => "Patient";
 
+        [Browsable(false)]
         public string InsertValues => $"'{this.PatientJMBG}', '{this.PatientName}', '{this.PatientSurname}', {this.Doctor.DoctorId}";
 
+        [Browsable(false)]
         public string UpdateValues => $"PatientJMBG = '{this.PatientJMBG}', PatientName = '{this.PatientName}', PatientSurname = '{this.PatientSurname}', DoctorId= {this.Doctor.DoctorId}";
 
+        [Browsable(false)]
         public string SearchWhere { get ; set; }
 
+        [Browsable(false)]
         public string SearchId => $"PatientJMBG = '{this.PatientJMBG}'";
 
+        [Browsable(false)]
         public string JoinFull => $"p join Doctor d on (p.DoctorId = d.DoctorId)";
 
+        [Browsable(false)]
         public object ColumnId => "PatientJMBG";
 
         public List<IDomain> GetReaderResult(SqlDataReader reader)
@@ -55,6 +64,11 @@ namespace Domain
                 list.Add(m);
             }
             return list;
+        }
+
+        public override string ToString()
+        {
+            return $"{PatientName} {PatientSurname}";
         }
     }
 }
